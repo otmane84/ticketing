@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticketing Project</title>
+	<link rel="stylesheet" href="{% static 'tecketing/index.css' %}">
+</head>
+<body>
+    <h1>Welcome to the ticketing project!</h1>
+    <a href="{% url 'submit' %}">Submit a ticket</a>
+    <a href="{% url 'tickets' %}">View Tickets</a>
+	
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>submit</title>
+	<link rel="stylesheet" href="{% static 'tecketing/index.css' %}">
+</head>
+<body>
+    <h1>Submit a ticket</h1>
+	<form action="/submit" method="post">
+		{% csrf_token %}
+		<input type="text" name="username" placeholder="username">
+		<br/>
+		<textarea placeholder="Body" name="body"></textarea>
+		</br>
+		<input type="submit" value="Submit">
+</body>
+</html>

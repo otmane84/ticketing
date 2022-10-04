@@ -1,0 +1,30 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+	<link rel="stylesheet" href="{% static 'tecketing/index.css' %}">
+</head>
+<body>
+
+	<h1>View tickets!</h1>
+
+	
+			{% for ticket in tickets %}
+				{% autoescape off %}
+					{% if ticket.submitter == 'Mr Robot' %}
+						<div>Submitter : {{ticket.submitter | escape}}, created at : {{ticket.created_at}}</div>
+						<div>Body : {{ticket.body | escape}}</div>
+					{% else %}
+						<div>Submitter : {{ticket.submitter}}, created at : {{ticket.created_at}}</div>
+						<div>Body : {{ticket.body}}</div>
+					{% endif %}
+				{% endautoescape %}
+				<a href="{% url 'ticket' ticket.pk %}">View this ticket</a>
+			{% endfor %}
+	
+	
+
+</body>
+</html>
